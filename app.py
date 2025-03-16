@@ -63,9 +63,9 @@ def login():
     users = load_users()
     for user in users:
         if user["email"] == email and user["password"] == password:
-            return jsonify({"message": "Login successful"}), 200
+            return jsonify({"status": "success", "message": "Login successful"})
 
-    return jsonify({"error": "Invalid email or password"}), 401
+    return jsonify({"status": "error", "message": "Invalid credentials"}), 401
 
 @app.route('/home', methods=['GET'])
 def home():
