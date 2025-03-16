@@ -67,5 +67,9 @@ def login():
 
     return jsonify({"error": "Invalid email or password"}), 401
 
+@app.route('/home', methods=['GET'])
+def home():
+    return jsonify(load_home_data())
+
 if __name__ == '__main__':
     app.run()
