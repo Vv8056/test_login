@@ -48,6 +48,11 @@ CORS(app)  # Allow all origins (Consider restricting this in production)
 def load_users():
     with open("users.json", "r") as file:
         return json.load(file)
+        
+# Load home screen data from JSON file
+def load_home_data():
+    with open("home_data.json", "r") as file:
+        return json.load(file)
 
 @app.route('/login', methods=['POST'])
 def login():
